@@ -1,0 +1,90 @@
+<html>
+<head>
+<style>
+
+input:active{
+  outline: none;
+}
+
+input:focus{
+  outline: none;
+}
+.s-psw{
+  font-family: Roboto;
+  font-size: 16px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 19px;
+  color:black;
+  padding: 6px 4px;
+  background-color: tranparent;
+  border: none;
+  border-bottom: 1px solid #007FF4;
+}
+
+.s-btn{
+
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18px;
+  font-family: Roboto;
+  font-size: 14px;
+  color: #FFFFFF;
+  padding: 14px 24px;
+  background: #007FF4;
+  box-shadow: 0px 4px 12px rgba(43, 54, 65, 0.1);
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: 250ms ease;
+}
+
+.s-btn:hover{
+  background: #2694FA;
+  box-shadow: 0px 4px 12px rgba(47,155,255,0.1);
+}
+
+.s-btn:active{
+  background: #0073DE;
+  transform: scale(0.98);
+
+}
+.center {
+
+  margin: auto;
+  width: 50%;
+  background-color: #81D4FA;
+  padding: 10px;
+  height: auto;
+
+}
+</style>
+</head>
+<body>
+  <script>
+
+  function generatePassword(elm)
+  {
+    elm = document.getElementById(elm);
+    elm.value = generateRandomPassword();
+  }
+
+  function generateRandomPassword() {
+    return Math.random().toString(36).slice(-12);
+
+  }
+  </script>
+
+<div class="center">
+  <h1><center>Password Generator<center></h1>
+
+  <br><br>
+  <input placeholder="Password Generator..." class="s-psw"
+  type="text" id="password">
+  <button onclick="generatePassword('password')" class="s-btn">
+    Generate Password</button>
+</div>
+</body>
+</html>
